@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Problème de sécurité
+    url: https://github.com/homebrw/checkmate-feedback/security/policy
+    about: Ne publiez jamais une vulnérabilité ou un secret dans une issue publique.
