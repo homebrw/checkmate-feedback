@@ -14,6 +14,8 @@ Vous pouvez venir nous dire qu'une chose :
 
 Le formulaire vous guide. **Une ou deux phrases suffisent** pour commencer, et la plupart des détails techniques sont facultatifs.
 
+Si vous testez avec un enfant, **l'adulte peut remplir le formulaire en reprenant simplement ses mots**. Il n'est pas nécessaire que l'enfant utilise lui-même GitHub ni qu'il donne des informations permettant de l'identifier.
+
 ## Le meilleur retour possible
 
 Racontez simplement le moment :
@@ -34,7 +36,7 @@ Ne publiez jamais :
 - un mot de passe, une clé API, un jeton, un lien privé ou un secret ;
 - une photo utilisée comme preuve dans Check Mate.
 
-Si une capture aide à expliquer le problème, masquez d'abord toutes les informations personnelles.
+Si une capture aide à expliquer le problème, masquez d'abord toutes les informations personnelles. **En cas de doute, n'ajoutez pas de capture.**
 
 ## Et après ?
 
