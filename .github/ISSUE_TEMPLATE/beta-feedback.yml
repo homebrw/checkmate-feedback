@@ -10,7 +10,9 @@ body:
         Pas besoin de vocabulaire technique ni de savoir si c'est vraiment un bug.
         **Racontez simplement ce que vous avez fait et ce que vous avez remarqué.**
 
-        Ce formulaire prend seulement quelques minutes. Les champs facultatifs peuvent être laissés vides.
+        **Pour le titre**, quelques mots suffisent, par exemple : « le bouton de validation ne réagit pas ».
+
+        Les champs facultatifs peuvent être laissés vides.
 
         > 🔒 Ce dépôt est public. N'indiquez aucun nom complet, e-mail, téléphone, adresse, mot de passe, donnée permettant d'identifier un enfant, ni capture contenant des informations personnelles.
 
@@ -18,7 +20,6 @@ body:
     id: tester
     attributes:
       label: "👤 Vous testez Check Mate en tant que…"
-      description: "Choisissez simplement le cas qui vous correspond."
       options:
         - Parent
         - Enfant
@@ -64,7 +65,7 @@ body:
     id: story
     attributes:
       label: "✍️ Racontez-nous"
-      description: "Une ou deux phrases suffisent. Qu'avez-vous fait ? Qu'avez-vous vu, compris ou ressenti ?"
+      description: "Une ou deux phrases suffisent. Qu'avez-vous voulu faire ? Qu'avez-vous vu, compris ou ressenti ?"
       placeholder: |
         Exemple : J'ai voulu valider une tâche. J'ai appuyé sur le bouton, mais je ne savais pas si ça avait marché parce que rien n'a changé à l'écran.
     validations:
@@ -80,8 +81,8 @@ body:
   - type: textarea
     id: steps
     attributes:
-      label: "👣 Pouvez-vous nous dire comment y arriver ?"
-      description: "Facultatif. Utile surtout si quelque chose ne fonctionne pas."
+      label: "👣 Si c'est un bug, comment peut-on le revoir ?"
+      description: "Facultatif. Même deux étapes peuvent beaucoup aider."
       placeholder: |
         1. J'ouvre…
         2. J'appuie sur…
@@ -90,54 +91,26 @@ body:
   - type: dropdown
     id: frequency
     attributes:
-      label: "🔁 Cela arrive…"
+      label: "🔁 Si c'est un bug, cela arrive…"
       options:
         - À chaque fois
         - Souvent
         - Une seule fois
         - Je ne sais pas
-        - Pas concerné
-    validations:
-      required: true
-
-  - type: dropdown
-    id: impact
-    attributes:
-      label: "🚦 Est-ce que cela vous bloque ?"
-      options:
-        - "Oui, complètement"
-        - "Un peu, mais je peux continuer"
-        - "Non, c'est surtout gênant ou surprenant"
-        - "Pas concerné"
-    validations:
-      required: true
 
   - type: input
     id: device
     attributes:
-      label: "📱 Sur quel appareil ?"
+      label: "📱 Appareil ou navigateur"
       description: "Facultatif. Laissez vide si vous ne savez pas."
-      placeholder: "Exemple : iPhone, téléphone Android, ordinateur, tablette, Alexa…"
-
-  - type: input
-    id: browser
-    attributes:
-      label: "🌐 Navigateur ou application"
-      description: "Facultatif."
-      placeholder: "Exemple : Safari, Chrome, PWA installée…"
+      placeholder: "Exemple : iPhone + Safari, Android + Chrome, ordinateur, Alexa…"
 
   - type: textarea
     id: screenshot
     attributes:
       label: "📸 Capture d'écran ou vidéo"
-      description: "Facultatif. Vous pouvez glisser une image ici, uniquement après avoir masqué toute information personnelle ou familiale."
+      description: "Facultatif. Vous pouvez glisser une image ici après avoir masqué toute information personnelle ou familiale."
       placeholder: "Glissez votre capture ici si elle aide à comprendre."
-
-  - type: textarea
-    id: extra
-    attributes:
-      label: "➕ Autre chose à ajouter ?"
-      description: "Facultatif. Tout détail qui pourrait nous aider."
 
   - type: checkboxes
     id: privacy
