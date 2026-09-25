@@ -1,0 +1,148 @@
+name: "✨ Partager un retour de bêta-test"
+description: "Un bug, une idée ou juste quelque chose qui vous a surpris : racontez-nous."
+title: "[Bêta] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Merci de tester Check Mate 💛
+
+        Pas besoin de vocabulaire technique ni de savoir si c'est vraiment un bug.
+        **Racontez simplement ce que vous avez fait et ce que vous avez remarqué.**
+
+        Ce formulaire prend seulement quelques minutes. Les champs facultatifs peuvent être laissés vides.
+
+        > 🔒 Ce dépôt est public. N'indiquez aucun nom complet, e-mail, téléphone, adresse, mot de passe, donnée permettant d'identifier un enfant, ni capture contenant des informations personnelles.
+
+  - type: dropdown
+    id: tester
+    attributes:
+      label: "👤 Vous testez Check Mate en tant que…"
+      description: "Choisissez simplement le cas qui vous correspond."
+      options:
+        - Parent
+        - Enfant
+        - Parent et enfant ensemble
+    validations:
+      required: true
+
+  - type: dropdown
+    id: feedback_type
+    attributes:
+      label: "💬 Qu'avez-vous envie de nous dire ?"
+      options:
+        - "🐛 Quelque chose ne fonctionne pas"
+        - "😕 Quelque chose est difficile à comprendre"
+        - "✨ Quelque chose pourrait être plus simple ou plus agréable"
+        - "💡 J'ai une idée"
+        - "❤️ J'aime quelque chose et je veux le dire"
+        - "📝 Autre retour"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: surface
+    attributes:
+      label: "📍 Où cela se passe-t-il ?"
+      description: "Choisissez ce qui ressemble le plus à l'endroit concerné."
+      options:
+        - Accueil
+        - Tâches et routines
+        - Points et récompenses
+        - Nestor
+        - Alexa
+        - Réglages
+        - Check Mate Lite
+        - Connexion / compte
+        - Notifications
+        - Autre
+        - Je ne sais pas
+    validations:
+      required: true
+
+  - type: textarea
+    id: story
+    attributes:
+      label: "✍️ Racontez-nous"
+      description: "Une ou deux phrases suffisent. Qu'avez-vous fait ? Qu'avez-vous vu, compris ou ressenti ?"
+      placeholder: |
+        Exemple : J'ai voulu valider une tâche. J'ai appuyé sur le bouton, mais je ne savais pas si ça avait marché parce que rien n'a changé à l'écran.
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: "🎯 Qu'auriez-vous aimé qu'il se passe ?"
+      description: "Facultatif. Dites-nous ce qui vous aurait semblé plus clair, plus simple ou plus logique."
+      placeholder: "Exemple : j'aurais aimé voir tout de suite un message disant que la tâche était bien envoyée."
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: "👣 Pouvez-vous nous dire comment y arriver ?"
+      description: "Facultatif. Utile surtout si quelque chose ne fonctionne pas."
+      placeholder: |
+        1. J'ouvre…
+        2. J'appuie sur…
+        3. Puis…
+
+  - type: dropdown
+    id: frequency
+    attributes:
+      label: "🔁 Cela arrive…"
+      options:
+        - À chaque fois
+        - Souvent
+        - Une seule fois
+        - Je ne sais pas
+        - Pas concerné
+    validations:
+      required: true
+
+  - type: dropdown
+    id: impact
+    attributes:
+      label: "🚦 Est-ce que cela vous bloque ?"
+      options:
+        - "Oui, complètement"
+        - "Un peu, mais je peux continuer"
+        - "Non, c'est surtout gênant ou surprenant"
+        - "Pas concerné"
+    validations:
+      required: true
+
+  - type: input
+    id: device
+    attributes:
+      label: "📱 Sur quel appareil ?"
+      description: "Facultatif. Laissez vide si vous ne savez pas."
+      placeholder: "Exemple : iPhone, téléphone Android, ordinateur, tablette, Alexa…"
+
+  - type: input
+    id: browser
+    attributes:
+      label: "🌐 Navigateur ou application"
+      description: "Facultatif."
+      placeholder: "Exemple : Safari, Chrome, PWA installée…"
+
+  - type: textarea
+    id: screenshot
+    attributes:
+      label: "📸 Capture d'écran ou vidéo"
+      description: "Facultatif. Vous pouvez glisser une image ici, uniquement après avoir masqué toute information personnelle ou familiale."
+      placeholder: "Glissez votre capture ici si elle aide à comprendre."
+
+  - type: textarea
+    id: extra
+    attributes:
+      label: "➕ Autre chose à ajouter ?"
+      description: "Facultatif. Tout détail qui pourrait nous aider."
+
+  - type: checkboxes
+    id: privacy
+    attributes:
+      label: "🔒 Avant d'envoyer"
+      options:
+        - label: "J'ai vérifié que mon retour ne contient pas de nom complet, donnée personnelle, donnée permettant d'identifier un enfant, photo privée, mot de passe, clé ou autre secret."
+          required: true
