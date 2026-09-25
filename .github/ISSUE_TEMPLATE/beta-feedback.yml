@@ -17,13 +17,14 @@ body:
         > 🔒 Ce dépôt est public. N'indiquez aucun nom complet, e-mail, téléphone, adresse, mot de passe, donnée permettant d'identifier un enfant, ni capture contenant des informations personnelles.
 
   - type: dropdown
-    id: tester
+    id: space
     attributes:
-      label: "👤 Vous testez Check Mate en tant que…"
+      label: "🧭 Quelle partie de Check Mate utilisiez-vous ?"
+      description: "Si vous testez avec un enfant, un adulte peut remplir ce formulaire en reprenant ses mots."
       options:
-        - Parent
-        - Enfant
-        - Parent et enfant ensemble
+        - Espace parent
+        - Espace enfant
+        - Les deux ensemble
     validations:
       required: true
 
@@ -109,7 +110,7 @@ body:
     id: screenshot
     attributes:
       label: "📸 Capture d'écran ou vidéo"
-      description: "Facultatif. Vous pouvez glisser une image ici après avoir masqué toute information personnelle ou familiale."
+      description: "Facultatif. Masquez toute information personnelle ou familiale avant de l'ajouter. En cas de doute, n'ajoutez pas de capture."
       placeholder: "Glissez votre capture ici si elle aide à comprendre."
 
   - type: checkboxes
@@ -117,5 +118,5 @@ body:
     attributes:
       label: "🔒 Avant d'envoyer"
       options:
-        - label: "J'ai vérifié que mon retour ne contient pas de nom complet, donnée personnelle, donnée permettant d'identifier un enfant, photo privée, mot de passe, clé ou autre secret."
+        - label: "J'ai vérifié qu'il n'y a aucune information personnelle, donnée permettant d'identifier un enfant, ni secret dans ce retour ou ses captures."
           required: true
