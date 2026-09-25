@@ -15,19 +15,16 @@ jobs:
     env:
       PRIVATE_FEEDBACK_TOKEN: ${{ secrets.PRIVATE_FEEDBACK_TOKEN }}
     steps:
+      - name: Utiliser le polling de secours si le token privé manque
+        if: env.PRIVATE_FEEDBACK_TOKEN == ''
+        run: echo "PRIVATE_FEEDBACK_TOKEN is not configured. The private polling fallback will import this issue."
+
       - name: Créer le miroir privé
+        if: env.PRIVATE_FEEDBACK_TOKEN != ''
         uses: actions/github-script@v7
         with:
           github-token: ${{ secrets.PRIVATE_FEEDBACK_TOKEN }}
           script: |
-            const token = process.env.PRIVATE_FEEDBACK_TOKEN;
-            if (!token) {
-              core.notice(
-                "PRIVATE_FEEDBACK_TOKEN is not configured. The private polling fallback will import this issue.",
-              );
-              return;
-            }
-
             const sourceOwner = context.repo.owner;
             const sourceRepo = context.repo.repo;
             const targetOwner = "homebrw";
