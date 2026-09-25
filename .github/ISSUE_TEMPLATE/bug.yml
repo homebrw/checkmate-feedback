@@ -1,0 +1,67 @@
+name: Signaler un bug
+description: Signaler un comportement qui ne fonctionne pas comme prévu.
+title: "[Bug] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Merci pour votre retour. Ce dépôt est public : ne partagez aucune donnée personnelle, photo d'enfant, secret, clé API ou capture non anonymisée.
+  - type: textarea
+    id: problem
+    attributes:
+      label: Que s'est-il passé ?
+      description: Décrivez le problème de façon factuelle.
+      placeholder: "Exemple : après avoir appuyé sur…, l'écran affiche…"
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Quel comportement attendiez-vous ?
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Étapes pour reproduire
+      placeholder: |
+        1. Ouvrir…
+        2. Appuyer sur…
+        3. Observer…
+    validations:
+      required: true
+  - type: dropdown
+    id: surface
+    attributes:
+      label: Où le problème apparaît-il ?
+      options:
+        - Application parent
+        - Application enfant
+        - Checkmate Lite
+        - Alexa
+        - Nestor
+        - Autre
+    validations:
+      required: true
+  - type: input
+    id: device
+    attributes:
+      label: Appareil / navigateur
+      placeholder: "Exemple : iPhone 16, iOS 18, PWA installée"
+  - type: input
+    id: version
+    attributes:
+      label: Version de Check Mate
+      description: Si elle est visible dans l'application.
+  - type: textarea
+    id: extra
+    attributes:
+      label: Informations complémentaires
+      description: Ajoutez uniquement des informations anonymisées.
+  - type: checkboxes
+    id: privacy
+    attributes:
+      label: Confidentialité
+      options:
+        - label: J'ai vérifié que ce signalement ne contient aucune donnée personnelle, donnée d'enfant, photo privée ou secret.
+          required: true
