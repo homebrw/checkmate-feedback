@@ -1,35 +1,43 @@
-# Check Mate — Feedback
+# Check Mate — espace bêta
 
-Bienvenue sur le dépôt public de retours de **Check Mate**.
+Merci de tester **Check Mate**. Ici, pas besoin de parler comme un développeur ni de savoir si ce que vous avez vu est un « bug ».
 
-Ce dépôt sert uniquement à signaler un bug, proposer une amélioration ou partager un retour d’usage. Le code source et le suivi technique de Check Mate restent privés.
+👉 **[Partager un retour](https://github.com/homebrw/checkmate-feedback/issues/new?template=beta-feedback.yml)**
 
-## Signaler quelque chose
+Vous pouvez venir nous dire qu'une chose :
 
-Utilisez **Issues → New issue** puis choisissez le formulaire adapté :
+- ne fonctionne pas ;
+- n'est pas claire ;
+- pourrait être plus simple ou plus agréable ;
+- vous donne une idée ;
+- vous plaît particulièrement.
 
-- **Bug** — un comportement ne fonctionne pas comme prévu ;
-- **Idée / amélioration** — une évolution que vous aimeriez voir ;
-- **Autre feedback** — tout retour qui ne rentre pas dans les deux catégories précédentes.
+Le formulaire vous guide. **Une ou deux phrases suffisent** pour commencer, et la plupart des détails techniques sont facultatifs.
 
-## Avant de publier
+## Le meilleur retour possible
 
-Ce dépôt est public. Ne publiez jamais :
+Racontez simplement le moment :
 
-- nom complet, adresse e-mail, numéro de téléphone ou adresse postale ;
-- nom, photo ou autre donnée permettant d’identifier un enfant ;
-- capture d’écran contenant des informations personnelles ;
-- mot de passe, clé API, jeton, lien privé ou secret ;
-- contenu de preuve photo ou toute autre donnée familiale privée.
+> « J'ai voulu faire …, j'ai fait …, et ensuite j'ai vu/compris … »
 
-Si une capture est utile, masquez toutes les données personnelles avant de l’ajouter.
+Vous n'avez pas besoin de chercher la cause du problème. C'est à nous de le faire.
 
-## Sécurité
+Pour que chaque sujet puisse être traité séparément, créez de préférence **un retour par sujet**.
 
-Pour une vulnérabilité de sécurité, **n’ouvrez pas d’issue publique**. Consultez [SECURITY.md](SECURITY.md).
+## 🔒 Important : ce dépôt est public
 
-## Suivi
+Ne publiez jamais :
 
-Les retours publics peuvent être copiés dans le suivi technique privé de Check Mate. Les discussions d’implémentation, informations d’infrastructure et détails internes restent privés. Quand un retour public est traité, son issue publique peut être mise à jour ou fermée sans exposer ces informations internes.
+- le nom complet, l'adresse e-mail, le téléphone ou l'adresse d'une personne ;
+- le nom, la photo ou toute autre information permettant d'identifier un enfant ;
+- une capture contenant des informations personnelles ou familiales ;
+- un mot de passe, une clé API, un jeton, un lien privé ou un secret ;
+- une photo utilisée comme preuve dans Check Mate.
 
-Merci de contribuer à améliorer Check Mate.
+Si une capture aide à expliquer le problème, masquez d'abord toutes les informations personnelles.
+
+## Et après ?
+
+Chaque retour peut être repris automatiquement dans le suivi technique privé de Check Mate afin d'être analysé et corrigé. Les détails internes, le code et les informations techniques privées ne sont jamais recopiés ici.
+
+Pour une vulnérabilité de sécurité ou un secret exposé, **n'ouvrez pas d'issue publique** : consultez [SECURITY.md](SECURITY.md).

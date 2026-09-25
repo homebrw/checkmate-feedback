@@ -1,25 +1,28 @@
-# Contribuer au feedback Check Mate
+# Comment nous aider à améliorer Check Mate
 
-Ce dépôt est un espace public de retours, pas le dépôt du code source.
+Le plus utile est de raconter **ce que vous avez vécu**, pas d'essayer de diagnostiquer le problème.
 
-## Un retour par issue
+1. Ouvrez le formulaire **Partager un retour de bêta-test**.
+2. Répondez avec vos mots. Une ou deux phrases peuvent suffire.
+3. Ajoutez les détails facultatifs seulement si vous les connaissez.
+4. Vérifiez qu'aucune information personnelle n'apparaît, puis publiez.
 
-Créez une issue distincte par bug ou idée afin que chaque sujet puisse être suivi indépendamment.
+## Exemples de retours utiles
 
-## Donnez le contexte utile
+> « Je pensais que le bouton allait valider la tâche, mais après avoir appuyé dessus je ne savais pas si ça avait marché. »
 
-Pour un bug, indiquez autant que possible :
+> « J'aimerais pouvoir voir plus vite combien de points il me reste avant une récompense. »
 
-- ce que vous faisiez ;
-- ce que vous avez observé ;
-- ce que vous attendiez ;
-- les étapes de reproduction ;
-- le type d'appareil, le navigateur et la version de l'application si connus.
+> « Je n'ai pas compris ce que voulait dire ce message. »
 
-## Protégez les données privées
+Ces retours suffisent pour commencer l'analyse.
 
-Ne publiez aucune donnée personnelle ou familiale, en particulier aucune donnée d'enfant. Les captures doivent être anonymisées avant publication.
+## Un sujet à la fois
 
-## Suivi technique
+Si vous remarquez deux choses différentes, faites deux retours. Cela permet de suivre et de résoudre chaque sujet séparément.
 
-Une issue publique peut être reliée à une issue technique privée. Cette liaison ne rend pas publics le code, les discussions internes, les journaux, les secrets ou les informations d'infrastructure.
+## Confidentialité
+
+Ce dépôt est public. Ne publiez aucune donnée personnelle ou familiale, et en particulier aucune information permettant d'identifier un enfant. Les captures doivent être anonymisées avant publication.
+
+Une issue publique peut être reliée automatiquement à une issue technique privée. Cette liaison ne rend publics ni le code, ni les discussions internes, ni les journaux, ni les secrets, ni les informations d'infrastructure.
