@@ -1,0 +1,118 @@
+name: Envoyer le feedback vers Check Mate
+
+on:
+  issues:
+    types: [opened, reopened]
+
+permissions:
+  contents: read
+  issues: read
+
+jobs:
+  mirror:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    env:
+      PRIVATE_FEEDBACK_TOKEN: ${{ secrets.PRIVATE_FEEDBACK_TOKEN }}
+    steps:
+      - name: Créer le miroir privé
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.PRIVATE_FEEDBACK_TOKEN }}
+          script: |
+            const token = process.env.PRIVATE_FEEDBACK_TOKEN;
+            if (!token) {
+              core.notice(
+                "PRIVATE_FEEDBACK_TOKEN is not configured. The private polling fallback will import this issue.",
+              );
+              return;
+            }
+
+            const sourceOwner = context.repo.owner;
+            const sourceRepo = context.repo.repo;
+            const targetOwner = "homebrw";
+            const targetRepo = "checkmate";
+            const issue = context.payload.issue;
+
+            if (!issue || issue.pull_request) {
+              core.notice("No public issue to mirror.");
+              return;
+            }
+
+            const marker = `${sourceOwner}/${sourceRepo}#${issue.number}`;
+            const mirrorLabel = "public-feedback";
+
+            // Ensure the private marker label exists.
+            try {
+              await github.rest.issues.getLabel({
+                owner: targetOwner,
+                repo: targetRepo,
+                name: mirrorLabel,
+              });
+            } catch (error) {
+              if (error.status !== 404) throw error;
+              await github.rest.issues.createLabel({
+                owner: targetOwner,
+                repo: targetRepo,
+                name: mirrorLabel,
+                color: "0E8A16",
+                description: "Issue mirrored from the public feedback repository",
+              });
+            }
+
+            // Avoid duplicates without relying on GitHub search indexing.
+            const existingMirrors = await github.paginate(
+              github.rest.issues.listForRepo,
+              {
+                owner: targetOwner,
+                repo: targetRepo,
+                labels: mirrorLabel,
+                state: "all",
+                per_page: 100,
+              },
+            );
+
+            const alreadyExists = existingMirrors.some((candidate) =>
+              (candidate.body || "").includes(`Public-Feedback-ID: ${marker}`),
+            );
+
+            if (alreadyExists) {
+              core.info(`Private mirror already exists for ${marker}.`);
+              return;
+            }
+
+            const neutralizeMentions = (value) =>
+              String(value || "").replaceAll("@", "@\u200B");
+
+            const sourceBody = neutralizeMentions(issue.body).slice(0, 45000);
+            const reporter = neutralizeMentions(issue.user?.login || "unknown");
+            const title = neutralizeMentions(issue.title).slice(0, 180);
+
+            const body = [
+              `Public-Feedback-ID: ${marker}`,
+              "",
+              `**Source publique :** ${issue.html_url}`,
+              `**Auteur GitHub :** ${reporter}`,
+              `**Créée le :** ${issue.created_at}`,
+              "",
+              "---",
+              "",
+              "## Contenu du feedback public",
+              "",
+              sourceBody || "_Aucun contenu._",
+              "",
+              "---",
+              "",
+              "> Cette issue est un miroir interne. Ne copiez pas de commentaires, détails techniques,",
+              "> données privées ou informations d’infrastructure vers l’issue publique.",
+            ].join("\n");
+
+            await github.rest.issues.create({
+              owner: targetOwner,
+              repo: targetRepo,
+              title: `[Feedback public #${issue.number}] ${title}`,
+              body,
+              labels: [mirrorLabel],
+            });
+
+            core.info(`Created private mirror for ${marker}.`);
